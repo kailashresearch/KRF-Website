@@ -2,7 +2,43 @@
 import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<MainLayout title="Home">
+<MainLayout 
+  title="Home"
+  description="Kailash Research Foundation bridges research and community challenges, focusing on policy research, human rights, women's empowerment, health access, and education to create inclusive, resilient systems."
+>
+  <!-- Additional structured data for homepage -->
+  <script type="application/ld+json" slot="head">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://kailashresearch.github.io/KRF-Website/#website",
+          "url": "https://kailashresearch.github.io/KRF-Website/",
+          "name": "Kailash Research Foundation",
+          "description": "Where Research Meets Human Resolve",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://kailashresearch.github.io/KRF-Website/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://kailashresearch.github.io/KRF-Website/#webpage",
+          "url": "https://kailashresearch.github.io/KRF-Website/",
+          "name": "Home | Kailash Research Foundation",
+          "isPartOf": {
+            "@id": "https://kailashresearch.github.io/KRF-Website/#website"
+          },
+          "about": {
+            "@id": "https://kailashresearch.github.io/KRF-Website/#organization"
+          },
+          "description": "Kailash Research Foundation bridges research and community challenges, focusing on policy research, human rights, women's empowerment, health access, and education to create inclusive, resilient systems."
+        }
+      ]
+    }
+  </script>
   <!-- Hero Section -->
   <section class="bg-yellow-500 text-white py-20">
     <div class="container mx-auto px-4">

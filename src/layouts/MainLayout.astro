@@ -4,9 +4,19 @@ import "../styles/global.css";
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  canonicalURL?: string;
 }
 
-const { title, description = "Kailash Research Foundation - Where Research Meets Human Resolve" } = Astro.props;
+const { 
+  title, 
+  description = "Kailash Research Foundation - Where Research Meets Human Resolve", 
+  image = "/favicon.svg",
+  canonicalURL = new URL(Astro.url.pathname, Astro.site)
+} = Astro.props;
+
+// Construct full image URL
+const socialImageURL = new URL(image, Astro.site).href;
 ---
 
 <!DOCTYPE html>
@@ -15,9 +25,59 @@ const { title, description = "Kailash Research Foundation - Where Research Meets
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <meta name="keywords" content="Kailash Research Foundation, KRF, research, policy, human rights, women empowerment, health access, education, community development" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={`${title} | Kailash Research Foundation`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={socialImageURL} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={`${title} | Kailash Research Foundation`} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={socialImageURL} />
+
     <title>{title} | Kailash Research Foundation</title>
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://kailashresearch.github.io/KRF-Website/#organization",
+        "name": "Kailash Research Foundation",
+        "url": "https://kailashresearch.github.io/KRF-Website",
+        "logo": "https://kailashresearch.github.io/KRF-Website/favicon.svg",
+        "description": "Kailash Research Foundation exists to bridge the gap between the complex challenges communities face and the solutions they deserve.",
+        "foundingDate": "2023",
+        "founders": [
+          {
+            "@type": "Person",
+            "name": "Raveena Palli"
+          },
+          {
+            "@type": "Person",
+            "name": "Lakshya N. Palli"
+          }
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "email": "info@krf.org",
+          "contactType": "customer service"
+        }
+      }
+    </script>
+
+    <!-- Additional head content from page components -->
+    <slot name="head" />
   </head>
   <body class="font-sans bg-white text-gray-800">
     <header class="bg-white shadow-sm sticky top-0 z-50">
