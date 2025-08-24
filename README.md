@@ -1,43 +1,50 @@
-# Astro Starter Kit: Minimal
+# Kailash Research Foundation (KRF) Website
 
-```sh
-npm create astro@latest -- --template minimal
+This repository contains the official website for the Kailash Research Foundation (KRF), an organization dedicated to bridging the gap between research and community challenges.
+
+## About KRF
+
+Kailash Research Foundation exists to bridge the gap between the complex challenges communities face and the solutions they deserve, combining a scientific approach with lived understanding to design systems that are inclusive, resilient, and built to last.
+
+## Website Features
+
+The website includes the following sections:
+
+- **Home/Hero**: Introduction to KRF and its mission
+- **Core Values**: Highlighting KRF's principles including inclusivity, representation, equity, and more
+- **Our Story**: Background on how KRF was founded and its guiding philosophy
+- **Areas of Focus**: Key areas where KRF works, including policy research, human rights, women's empowerment, health access, and education
+- **Roadmap & Plans**: Short-term (12 months) and long-term (3-5 years) goals and vision
+- **Our Vision**: Statement of KRF's vision and introduction to the founders
+- **Get Involved**: Ways for individuals and organizations to collaborate with KRF
+
+## Technical Details
+
+This website is built using:
+
+- [Astro](https://astro.build/) - A modern static site builder
+- [Tailwind CSS](https://tailwindcss.com/) - For styling and responsive design
+- Modern HTML and JavaScript
+
+## Development
+
+To work on this website locally:
+
+1. Clone this repository
+2. Install dependencies with `npm install`
+3. Start the development server with `npm run dev`
+4. Visit `localhost:4321` in your browser
+
+## Building for Production
+
+To build the website for production:
+
+```bash
+npm run build
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+The built files will be in the `dist/` directory.
 
-## 🚀 Project Structure
+## Contact
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+For more information about KRF, please contact us at [info@krf.org](mailto:info@krf.org).
