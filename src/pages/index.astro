@@ -1,16 +1,212 @@
 ---
-
+import MainLayout from '../layouts/MainLayout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<MainLayout title="Home">
+  <!-- Hero Section -->
+  <section class="bg-blue-800 text-white py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Kailash Research Foundation (KRF)</h1>
+        <p class="text-xl md:text-2xl mb-8">Where Research Meets Human Resolve</p>
+        <p class="text-lg mb-8">
+          KRF exists to bridge the gap between the complex challenges communities face and the solutions they deserve, 
+          combining a scientific approach with lived understanding to design systems that are inclusive, resilient, and built to last.
+        </p>
+        <a href="#involved" class="inline-block bg-white text-blue-800 font-bold py-3 px-6 rounded-lg hover:bg-blue-100 transition-colors">
+          Get Involved
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section id="values" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Core Values</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Inclusivity</h3>
+          <p>Every voice matters, regardless of background.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Representation</h3>
+          <p>Ensuring diverse communities have a seat at the table.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Equity</h3>
+          <p>Fairness in opportunities and access to resources.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Public-Centric Approach</h3>
+          <p>People's needs at the heart of every decision.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Understanding Heterogeneity</h3>
+          <p>Recognising the complexity and diversity within communities.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Growth & Adaptability</h3>
+          <p>Evolving with changing realities.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Wisdom & Fearlessness</h3>
+          <p>Acting with courage, backed by knowledge.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section id="about" class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Story</h2>
+        <div class="prose prose-lg max-w-none">
+          <p class="mb-4">
+            Kailash Research Foundation (KRF) was born out of a legacy quietly built, not declared. My grandparents believed that the most profound impact is made not through words, but through the way one lives. Their lives were defined by acts of generosity and integrity that asked for no recognition, yet left deep, lasting imprints on the people around them. KRF is my way of carrying forward that tradition, grounded in altruism, sustained by action.
+          </p>
+          <p class="mb-4">
+            On the field, these challenges never stand alone — they are intertwined with caste, religion, and social inequities, creating complex realities that demand solutions built on a scientific approach and a deep understanding of people's lived realities.
+          </p>
+          <p>
+            KRF rests on a simple belief: change is not enough — evolution is the goal. change makes things work a little better; evolution reshapes them so they no longer carry the same flaws. Our work is to design systems that are inclusive, resilient, and built to endure — systems that not only resolve today's challenges but open the way for communities to thrive on their own in the future.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas of Focus Section -->
+  <section id="focus" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Areas of Focus</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Policy Research & Recommendations</h3>
+          <p>Conducting evidence-based research to shape policies that address complex, interconnected social issues, with solutions that work in both national and when needed, global contexts.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Human Rights</h3>
+          <p>Advancing equity by focusing on the upliftment of communities facing systemic barriers, ensuring freedom from discrimination and building pathways to dignity for all.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Women</h3>
+          <p>Driving both grassroots initiatives and policy measures that strengthen women's rights, amplify their voices, and expand their representation in decision-making spaces.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Health Access</h3>
+          <p>Improving primary and localised healthcare systems to deliver consistent, high-quality services, ensuring that essential care is accessible to every community.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Practical Education</h3>
+          <p>Filling the gap left by traditional schooling by equipping all age groups with essential real-world knowledge, from financial literacy to legal awareness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap & Plans Section -->
+  <section id="roadmap" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Roadmap & Plans</h2>
+
+      <div class="max-w-4xl mx-auto mb-16">
+        <h3 class="text-2xl font-bold mb-6">Next 12 Months</h3>
+        <p class="mb-4">In its first year, KRF will focus on building strong roots while taking decisive early steps:</p>
+        <ul class="list-disc pl-6 space-y-2">
+          <li>Conduct outreach in selected districts to understand local realities firsthand.</li>
+          <li>Design practical, community-driven solutions to improve women's safety.</li>
+          <li>Host gatherings for children and youth aimed at bridging critical education gaps.</li>
+          <li>Form networks with relevant government channels and civic bodies to accelerate impact.</li>
+        </ul>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-2xl font-bold mb-6">3–5 Year Vision</h3>
+        <p class="mb-4">
+          Our goal is to establish KRF as a respected think tank with the capacity to deliver on-ground reforms: a model where research directly informs action. We will combine rigorous analysis with active community engagement, ensuring our work is both deeply informed and immediately relevant.
+        </p>
+        <p>
+          KRF will remain committed to working on two fronts: developing high-quality research and policy recommendations, and directly implementing solutions in partnership with communities, institutions, and government bodies. This dual approach ensures that our ideas don't just live on paper — they live in people's lives.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder's Message Section -->
+  <section id="founders" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Founder's Message</h2>
+
+      <div class="max-w-4xl mx-auto mb-12">
+        <p class="text-lg italic text-center mb-8">
+          "At KRF, we believe that transformation is strongest when it is grounded in both insight and action. Our mission is to bridge the gap between the realities communities face and the solutions they deserve, creating systems that are as resilient as they are inclusive."
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Raveena Palli, Co-Founder</h3>
+          <p>
+            Worked across 250+ districts in India, she has led initiatives in policy research, electoral strategy, and grassroots development. Her work spans designing evidence-based solutions in health access, education, women's empowerment, and human rights, currently serving as an election advisor— always recognising that these challenges are deeply interconnected. She brings the perspective of someone who has worked in both the halls of policy and on the ground with communities, ensuring that every solution we design is practical, inclusive, and built to last.
+          </p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <h3 class="text-xl font-bold mb-3 text-blue-700">Lakshya N. Palli, Co-Founder</h3>
+          <p>
+            An IIT graduate and accomplished RTL designer with expertise in design synthesis, modem, and Wi-Fi technologies. A star scholar and sports enthusiast, Lakshya is driven by building businesses that thrive in partnership with the communities they serve.
+          </p>
+        </div>
+      </div>
+
+      <div class="max-w-4xl mx-auto mt-12 text-center">
+        <p class="text-lg">
+          KRF is our shared platform to unite research, policy, and community action. We see it as a space where ideas evolve into tangible, lasting transformation. If our vision resonates with you, we welcome you to connect, collaborate, and grow alongside us.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Get Involved Section -->
+  <section id="involved" class="py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12">Get Involved</h2>
+
+      <div class="max-w-4xl mx-auto">
+        <p class="text-lg mb-8">
+          KRF is in its first chapter and this is when every voice, skill, and idea matters the most. While our formal projects are in development, there are already ways for individuals, institutions, and communities to connect with us:
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-blue-700">Collaborate on Research</h3>
+            <p>Partner with us on studies, field surveys, and policy recommendations.</p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-blue-700">Volunteer Your Skills</h3>
+            <p>From field outreach to design, data analysis to community facilitation — your expertise can help shape impactful work.</p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-blue-700">Host Conversations</h3>
+            <p>Co-create dialogues, workshops, and knowledge-sharing sessions with us.</p>
+          </div>
+          <div class="bg-blue-50 p-6 rounded-lg">
+            <h3 class="text-xl font-bold mb-3 text-blue-700">Stay Updated</h3>
+            <p>Join our mailing list to hear about upcoming projects, events, and opportunities to contribute.</p>
+          </div>
+        </div>
+
+        <p class="text-lg text-center">
+          Whether you are an individual with a vision, an organisation with aligned goals, or a community group with on-the-ground insights, we want to hear from you.
+        </p>
+
+        <div class="mt-12 text-center">
+          <a href="mailto:info@krf.org" class="inline-block bg-blue-800 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLayout>
