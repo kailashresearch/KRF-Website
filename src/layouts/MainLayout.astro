@@ -11,7 +11,7 @@ interface Props {
 const { 
   title, 
   description = "Kailash Research Foundation - Where Research Meets Human Resolve", 
-  image = "/favicon.svg",
+  image = "/KRF-Website/favicon.svg",
   canonicalURL = new URL(Astro.url.pathname, Astro.site)
 } = Astro.props;
 
@@ -28,7 +28,7 @@ const socialImageURL = new URL(image, Astro.site).href;
     <meta name="keywords" content="Kailash Research Foundation, KRF, research, policy, human rights, women empowerment, health access, education, community development" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href={canonicalURL} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/KRF-Website/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Open Graph / Facebook -->
@@ -82,14 +82,14 @@ const socialImageURL = new URL(image, Astro.site).href;
   <body class="font-sans bg-white text-gray-800">
     <header class="bg-white shadow-sm sticky top-0 z-50">
       <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="/" class="text-2xl font-bold text-yellow-500">KRF</a>
+        <a href="/" class="text-2xl font-bold text-primary-800">KRF</a>
         <nav class="hidden md:flex space-x-8">
-          <a href="#about" class="hover:text-yellow-400 transition-colors">About</a>
-          <a href="#values" class="hover:text-yellow-400 transition-colors">Values</a>
-          <a href="#focus" class="hover:text-yellow-400 transition-colors">Focus Areas</a>
-          <a href="#roadmap" class="hover:text-yellow-400 transition-colors">Roadmap</a>
-          <a href="#founders" class="hover:text-yellow-400 transition-colors">Our Vision</a>
-          <a href="#involved" class="hover:text-yellow-400 transition-colors">Get Involved</a>
+          <a href="#about" class="hover:text-primary-400 transition-colors">About</a>
+          <a href="#values" class="hover:text-primary-400 transition-colors">Values</a>
+          <a href="#focus" class="hover:text-primary-400 transition-colors">Focus Areas</a>
+          <a href="#roadmap" class="hover:text-primary-400 transition-colors">Roadmap</a>
+          <a href="#founders" class="hover:text-primary-400 transition-colors">Our Vision</a>
+          <a href="#involved" class="hover:text-primary-400 transition-colors">Get Involved</a>
         </nav>
         <button class="md:hidden text-gray-600" id="menu-toggle">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -100,12 +100,12 @@ const socialImageURL = new URL(image, Astro.site).href;
       <!-- Mobile menu -->
       <div class="md:hidden hidden bg-white w-full py-4 px-4" id="mobile-menu">
         <div class="flex flex-col space-y-4">
-          <a href="#about" class="hover:text-yellow-400 transition-colors">About</a>
-          <a href="#values" class="hover:text-yellow-400 transition-colors">Values</a>
-          <a href="#focus" class="hover:text-yellow-400 transition-colors">Focus Areas</a>
-          <a href="#roadmap" class="hover:text-yellow-400 transition-colors">Roadmap</a>
-          <a href="#founders" class="hover:text-yellow-400 transition-colors">Our Vision</a>
-          <a href="#involved" class="hover:text-yellow-400 transition-colors">Get Involved</a>
+          <a href="#about" class="hover:text-primary-400 transition-colors">About</a>
+          <a href="#values" class="hover:text-primary-400 transition-colors">Values</a>
+          <a href="#focus" class="hover:text-primary-400 transition-colors">Focus Areas</a>
+          <a href="#roadmap" class="hover:text-primary-400 transition-colors">Roadmap</a>
+          <a href="#founders" class="hover:text-primary-400 transition-colors">Our Vision</a>
+          <a href="#involved" class="hover:text-primary-400 transition-colors">Get Involved</a>
         </div>
       </div>
     </header>
