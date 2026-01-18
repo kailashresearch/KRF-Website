@@ -1,0 +1,137 @@
+---
+// Theme Customizer component: allows updating primary color CSS variables
+---
+
+<section id="theme-customizer" class="mt-16 border-t border-gray-200">
+  <div class="container mx-auto px-4 py-10">
+    <h2 class="text-2xl font-bold mb-6 text-gray-800">Customize Primary Colors</h2>
+    <p class="text-gray-600 mb-6">Adjust the primary color scale used across the site. Changes update instantly for this session.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- Color pickers will be injected here by the script -->
+      <div id="color-pickers" class="contents"></div>
+    </div>
+
+    <div class="mt-8 flex flex-wrap gap-3">
+      <button id="reset-colors" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-800 rounded border border-gray-300">Reset to Original</button>
+      <button id="copy-css" class="px-4 py-2 bg-primary-600 hover:bg-primary-700 text-white rounded">Copy CSS Variables</button>
+    </div>
+  </div>
+</section>
+
+<script type="module">
+  // Define the set of CSS variable names
+  const varNames = [
+    '--color-primary-50',
+    '--color-primary-100',
+    '--color-primary-200',
+    '--color-primary-300',
+    '--color-primary-400',
+    '--color-primary-500',
+    '--color-primary-600',
+    '--color-primary-700',
+    '--color-primary-800',
+    '--color-primary-900',
+    '--color-primary-950',
+  ];
+
+  const root = document.documentElement;
+  const computed = getComputedStyle(root);
+  const original = new Map();
+
+  for (const name of varNames) {
+    const val = computed.getPropertyValue(name).trim();
+    original.set(name, val);
+  }
+
+  const container = document.getElementById('color-pickers');
+  if (!container) {
+    // If container is not found, abort initialization gracefully
+  } else {
+    function toHex(color) {
+      // Accepts hex like #abc or #aabbcc or rgb(a) strings
+      if (!color) return '#000000';
+      const c = String(color).toLowerCase();
+      if (c.startsWith('#')) {
+        if (c.length === 4) {
+          return '#' + [...c.slice(1)].map((ch) => ch + ch).join('');
+        }
+        return c.slice(0, 7);
+      }
+      const m = c.match(/rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)/);
+      if (m) {
+        const [r, g, b] = m.slice(1, 4).map(Number);
+        const to2 = (n) => Number(n).toString(16).padStart(2, '0');
+        return `#${to2(r)}${to2(g)}${to2(b)}`;
+      }
+      return '#000000';
+    }
+
+    function makeCard(name, value) {
+      const id = name.replace(/[^a-z0-9]/gi, '-');
+      const card = document.createElement('div');
+      card.className = 'rounded-lg border border-gray-200 p-4 flex items-center justify-between gap-4';
+      card.innerHTML = `
+          <div class="min-w-0">
+            <div class="text-sm text-gray-500 font-mono">${name}</div>
+            <div class="text-base font-medium" id="label-${id}">${value}</div>
+          </div>
+          <input type="color" id="picker-${id}" class="h-10 w-14 p-1 bg-white rounded cursor-pointer border border-gray-300" />
+        `;
+      const input = card.querySelector('input');
+      if (input) {
+        input.value = toHex(value);
+        input.addEventListener('input', (e) => {
+          const target = e.target;
+          if (!target) return;
+          const hex = target.value;
+          root.style.setProperty(name, hex);
+          const label = card.querySelector(`#label-${id}`);
+          if (label) label.textContent = hex;
+        });
+      }
+      return card;
+    }
+
+    // Build UI
+    for (const name of varNames) {
+      const val = original.get(name) || '#000000';
+      container.appendChild(makeCard(name, val));
+    }
+
+    // Reset button
+    document.getElementById('reset-colors')?.addEventListener('click', () => {
+      for (const name of varNames) {
+        const val = original.get(name);
+        if (val) root.style.setProperty(name, val);
+      }
+      // sync inputs/labels
+      for (const name of varNames) {
+        const id = name.replace(/[^a-z0-9]/gi, '-');
+        const input = document.getElementById(`picker-${id}`);
+        const label = document.getElementById(`label-${id}`);
+        const val = original.get(name) || '#000000';
+        if (input) input.value = toHex(val);
+        if (label) label.textContent = toHex(val);
+      }
+    });
+
+    // Copy CSS button
+    document.getElementById('copy-css')?.addEventListener('click', async () => {
+      const lines = ['@theme {'];
+      for (const name of varNames) {
+        const val = getComputedStyle(root).getPropertyValue(name).trim();
+        lines.push(`  ${name}: ${val};`);
+      }
+      lines.push('}');
+      const text = lines.join('\n');
+      try {
+        await navigator.clipboard.writeText(text);
+        alert('CSS variables copied to clipboard. Paste into src/styles/global.css if you want to persist.');
+      } catch (e) {
+        console.error(e);
+        alert('Failed to copy.');
+      }
+    });
+  }
+</script>
