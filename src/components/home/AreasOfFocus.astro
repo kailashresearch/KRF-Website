@@ -1,31 +1,30 @@
 ---
----
+import FocusCard from "./FocusCard.astro";---
 
 <!-- Areas of Focus Section -->
 <section id="focus" class="py-16 bg-gray-50">
   <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center mb-12">Areas of Focus</h2>
+    <h2 class="text-3xl font-semibold text-center mb-12">Areas of Focus</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-bold mb-3 text-primary-600">Policy Research & Recommendations</h3>
-        <p>Conducting evidence-based research to shape policies that address complex, interconnected social issues, with solutions that work in both national and when needed, global contexts.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-bold mb-3 text-primary-600">Human Rights</h3>
-        <p>Advancing equity by focusing on the upliftment of communities facing systemic barriers, ensuring freedom from discrimination and building pathways to dignity for all.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-bold mb-3 text-primary-600">Women</h3>
-        <p>Driving both grassroots initiatives and policy measures that strengthen women's rights, amplify their voices, and expand their representation in decision-making spaces.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-bold mb-3 text-primary-600">Health Access</h3>
-        <p>Improving primary and localised healthcare systems to deliver consistent, high-quality services, ensuring that essential care is accessible to every community.</p>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-bold mb-3 text-primary-600">Practical Education</h3>
-        <p>Filling the gap left by traditional schooling by equipping all age groups with essential real-world knowledge, from financial literacy to legal awareness.</p>
-      </div>
+      <FocusCard title="Policy Research & Recommendations">
+          Conducting evidence-based research to shape policies that address complex, interconnected social issues, with solutions that work in both national and when needed, global contexts.
+      </FocusCard>
+
+      <FocusCard title="Human Rights">
+          Advancing equity by focusing on the upliftment of communities facing systemic barriers, ensuring freedom from discrimination and building pathways to dignity for all.
+      </FocusCard>
+
+      <FocusCard title="Women">
+          Driving both grassroots initiatives and policy measures that strengthen women's rights, amplify their voices, and expand their representation in decision-making spaces.
+      </FocusCard>
+
+      <FocusCard title="Health Access">
+          Improving primary and localised healthcare systems to deliver consistent, high-quality services, ensuring that essential care is accessible to every community.
+      </FocusCard>
+
+      <FocusCard title="Practical Education">
+          Filling the gap left by traditional schooling by equipping all age groups with essential real-world knowledge, from financial literacy to legal awareness.
+      </FocusCard>
     </div>
   </div>
 </section>

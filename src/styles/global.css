@@ -1,15 +1,40 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: 'Inter';
+    src: url('/KRF-Website/Inter/Inter-VariableFont_opsz,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-display: swap;
+}
+
 @theme {
-    --color-primary-50: #f3faf6;
-    --color-primary-100: #e2f6eb;
-    --color-primary-200: #c7ebd7;
-    --color-primary-300: #9adbb8;
-    --color-primary-400: #67c191;
-    --color-primary-500: #42a570;
-    --color-primary-600: #31885a;
-    --color-primary-700: #2a6b48;
-    --color-primary-800: #25563d;
-    --color-primary-900: #204734;
-    --color-primary-950: #123524;
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme {
+    --color-primary-50: #f4f2f6;
+    --color-primary-100: #dbf0e2;
+    --color-primary-200: #bae0c8;
+    --color-primary-300: #8dc8a8;
+    --color-primary-400: #5cab82;
+    --color-primary-500: #3b8e66;
+    --color-primary-600: #2a7150;
+    --color-primary-700: #215b41;
+    --color-primary-800: #1f4f3a;
+    --color-primary-900: #183c2c;
+    --color-primary-950: #0d2119;
+
+    --color-text-50: #f6f6f6;
+    --color-text-100: #e7e7e7;
+    --color-text-200: #d1d1d1;
+    --color-text-300: #b0b0b0;
+    --color-text-400: #888888;
+    --color-text-500: #6d6d6d;
+    --color-text-600: #5d5d5d;
+    --color-text-700: #4a4a4a;
+    --color-text-800: #454545;
+    --color-text-900: #3d3d3d;
+    --color-text-950: #1c1c1c;
+
+
 }
