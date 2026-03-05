@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://kailashresearch.github.io/KRF-Website/sitemap.xml
+Sitemap: https://kailashresearch.org//sitemap.xml
